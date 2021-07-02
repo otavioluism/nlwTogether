@@ -14,7 +14,7 @@ class CreateTagService {
         throw new Error('This Tag havent name!');
     }
 
-    const tagAlreadyExists = tagsRepositories.findOne({ name }); 
+    const tagAlreadyExists = await tagsRepositories.findOne({ name }); 
 
     if (tagAlreadyExists) { 
         throw new Error('This tag already exists!');
