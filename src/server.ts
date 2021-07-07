@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import path from 'path';
+import cors from 'cors';
 import 'reflect-metadata'; //trabalhar com decorators do typescript
 import './database'; //inserido a conexão do BD
 import express, { NextFunction, Request, Response } from 'express';
@@ -9,6 +10,7 @@ import router from './routes';
 
 dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 const app = express();
+app.use(cors());
 
 app.use(express.json()); // Habilita requisição do tipo body com JSON
 
