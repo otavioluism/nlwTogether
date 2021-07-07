@@ -1,5 +1,6 @@
 import {Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn} from "typeorm";
 import { v4 as uuid } from 'uuid';
+import { Exclude } from 'class-transformer';
 
 // <Entidades> -> ORM -> <DataBase> (users)  
 // Entidade referencia uma tabela no bando de dados
@@ -16,6 +17,7 @@ export default class User {
   @Column()
   email: string;
 
+  @Exclude()
   @Column()
   password: string;
 
